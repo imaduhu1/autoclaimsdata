@@ -70,7 +70,7 @@ st.markdown(
       <span class="letter" style="animation-delay:3.0s;">e</span>
       <span class="letter" style="animation-delay:3.1s;">r</span>
     </div>
-    '''
+    ''',
 )
 #2. Data Loading & Preprocessing
 
