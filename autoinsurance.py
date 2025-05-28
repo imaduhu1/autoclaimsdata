@@ -13,41 +13,59 @@ st.set_page_config(page_title="Insurance Claims Risk Explorer", layout="wide")
 st.markdown(
     '''
     <style>
-    .typewriter {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .typewriter span {
+    .bounce-letter {
       display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: .1em solid #00008B;
       color: #00008B;
       font-size: 48px;
       font-weight: 700;
+      animation: bounceX 0.5s ease-out forwards;
+      animation-fill-mode: forwards;
     }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+    @keyframes bounceX {
+      0% { transform: translateX(-100px); }
+      60% { transform: translateX(15px); }
+      100% { transform: translateX(0); }
     }
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-    .word1 { width: 0; animation: typing 1s steps(10,end) 0s forwards, blink .75s step-end infinite; }
-    .word2 { width: 0; animation: typing 1s steps(10,end) 1.5s forwards, blink .75s step-end infinite; }
-    .word3 { width: 0; animation: typing 1s steps(10,end) 3s forwards, blink .75s step-end infinite; }
-    .word4 { width: 0; animation: typing 1s steps(10,end) 4.5s forwards, blink .75s step-end infinite; }
     </style>
-    <div class="typewriter">
-      <span class="word1">Insurance </span>
-      <span class="word2">Claims </span>
-      <span class="word3">Risk </span>
-      <span class="word4">Explorer</span>
-    </div>
+    <h1 style="text-align:center;">
+      <!-- "Insurance" -->
+      <span class="bounce-letter" style="animation-delay:0s;">I</span>
+      <span class="bounce-letter" style="animation-delay:0.1s;">n</span>
+      <span class="bounce-letter" style="animation-delay:0.2s;">s</span>
+      <span class="bounce-letter" style="animation-delay:0.3s;">u</span>
+      <span class="bounce-letter" style="animation-delay:0.4s;">r</span>
+      <span class="bounce-letter" style="animation-delay:0.5s;">a</span>
+      <span class="bounce-letter" style="animation-delay:0.6s;">n</span>
+      <span class="bounce-letter" style="animation-delay:0.7s;">c</span>
+      <span class="bounce-letter" style="animation-delay:0.8s;">e</span>
+      <span style="display:inline-block; width:16px;"></span>
+      <!-- "Claims" -->
+      <span class="bounce-letter" style="animation-delay:0.9s;">C</span>
+      <span class="bounce-letter" style="animation-delay:1.0s;">l</span>
+      <span class="bounce-letter" style="animation-delay:1.1s;">a</span>
+      <span class="bounce-letter" style="animation-delay:1.2s;">i</span>
+      <span class="bounce-letter" style="animation-delay:1.3s;">m</span>
+      <span class="bounce-letter" style="animation-delay:1.4s;">s</span>
+      <span style="display:inline-block; width:16px;"></span>
+      <!-- "Risk" -->
+      <span class="bounce-letter" style="animation-delay:1.5s;">R</span>
+      <span class="bounce-letter" style="animation-delay:1.6s;">i</span>
+      <span class="bounce-letter" style="animation-delay:1.7s;">s</span>
+      <span class="bounce-letter" style="animation-delay:1.8s;">k</span>
+      <span style="display:inline-block; width:16px;"></span>
+      <!-- "Explorer" -->
+      <span class="bounce-letter" style="animation-delay:1.9s;">E</span>
+      <span class="bounce-letter" style="animation-delay:2.0s;">x</span>
+      <span class="bounce-letter" style="animation-delay:2.1s;">p</span>
+      <span class="bounce-letter" style="animation-delay:2.2s;">l</span>
+      <span class="bounce-letter" style="animation-delay:2.3s;">o</span>
+      <span class="bounce-letter" style="animation-delay:2.4s;">r</span>
+      <span class="bounce-letter" style="animation-delay:2.5s;">e</span>
+      <span class="bounce-letter" style="animation-delay:2.6s;">r</span>
+    </h1>
     ''',
     unsafe_allow_html=True
 )
-
 #2. Data Loading & Preprocessing
 
 @st.cache_data
