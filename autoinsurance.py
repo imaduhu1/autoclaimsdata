@@ -16,7 +16,7 @@ def load_data(path):
         return df
     return _load()
 
-data = load_data('insurance_claims.csv')
+data = load_data('/mnt/data/insurance_claims.csv')
 
 # Feature selection
 numeric_features = [
@@ -108,3 +108,4 @@ st.altair_chart(veh_chart, use_container_width=True)
 
 st.markdown("---")
 st.write("**Tip:** Use the controls in the sidebar to adjust the number of clusters and explore different feature combinations.")
+
