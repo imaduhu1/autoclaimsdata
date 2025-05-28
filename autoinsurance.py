@@ -69,64 +69,17 @@ st.markdown(
       <span class="letter" style="animation-delay:3.0s;">e</span>
       <span class="letter" style="animation-delay:3.1s;">r</span>
     </div>
-    ''', unsafe_allow_html=True
-); opacity: 0; }
-      80%  { transform: translateY(20px); opacity: 1; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    .container {
-      text-align: center;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    </style>
-    <div class="container">
-      <span class="letter" style="animation-delay:0s;">I</span>
-      <span class="letter" style="animation-delay:0.1s;">n</span>
-      <span class="letter" style="animation-delay:0.2s;">s</span>
-      <span class="letter" style="animation-delay:0.3s;">u</span>
-      <span class="letter" style="animation-delay:0.4s;">r</span>
-      <span class="letter" style="animation-delay:0.5s;">a</span>
-      <span class="letter" style="animation-delay:0.6s;">n</span>
-      <span class="letter" style="animation-delay:0.7s;">c</span>
-      <span class="letter" style="animation-delay:0.8s;">e</span>
-      <span style="display:inline-block; width:16px;"></span>
-      <span class="letter" style="animation-delay:0.9s;">A</span>
-      <span class="letter" style="animation-delay:1.0s;">u</span>
-      <span class="letter" style="animation-delay:1.1s;">t</span>
-      <span class="letter" style="animation-delay:1.2s;">o</span>
-      <span class="letter" style="animation-delay:1.3s;">-</span>
-      <span class="letter" style="animation-delay:1.4s;">c</span>
-      <span class="letter" style="animation-delay:1.5s;">l</span>
-      <span class="letter" style="animation-delay:1.6s;">a</span>
-      <span class="letter" style="animation-delay:1.7s;">i</span>
-      <span class="letter" style="animation-delay:1.8s;">m</span>
-      <span class="letter" style="animation-delay:1.9s;">s</span>
-      <span style="display:inline-block; width:16px;"></span>
-      <span class="letter" style="animation-delay:2.0s;">R</span>
-      <span class="letter" style="animation-delay:2.1s;">i</span>
-      <span class="letter" style="animation-delay:2.2s;">s</span>
-      <span class="letter" style="animation-delay:2.3s;">k</span>
-      <span style="display:inline-block; width:16px;"></span>
-      <span class="letter" style="animation-delay:2.4s;">E</span>
-      <span class="letter" style="animation-delay:2.5s;">x</span>
-      <span class="letter" style="animation-delay:2.6s;">p</span>
-      <span class="letter" style="animation-delay:2.7s;">l</span>
-      <span class="letter" style="animation-delay:2.8s;">o</span>
-      <span class="letter" style="animation-delay:2.9s;">r</span>
-      <span class="letter" style="animation-delay:3.0s;">e</span>
-      <span class="letter" style="animation-delay:3.1s;">r</span>
-    </div>
     ''',
+    unsafe_allow_html=True
 )
-#2. Data Loading & Preprocessing
+
+
+# 2. Data Loading & Preprocessing
 
 @st.cache_data
-# Cache CSV loading for performance
 def load_data(path):
     return pd.read_csv(path, parse_dates=['policy_bind_date'])
 
-# Attempt to load default file, otherwise allow upload
 DEFAULT_FILE = 'insurance_claims.csv'
 if os.path.exists(DEFAULT_FILE):
     df = load_data(DEFAULT_FILE)
