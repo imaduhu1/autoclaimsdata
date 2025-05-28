@@ -13,28 +13,37 @@ st.set_page_config(page_title="Insurance Claims Risk Explorer", layout="wide")
 st.markdown(
     '''
     <style>
-    .bounce-title {
-        font-size: 48px;
-        font-weight: 700;
-        text-align: center;
-        color: #2E86AB !important;
-        display: inline-block;
-        animation: bounce 2s infinite;
-        margin: 20px 0;
+    .typewriter {
+      text-align: center;
+      margin: 20px 0;
     }
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-30px);
-        }
-        60% {
-            transform: translateY(-15px);
-        }
+    .typewriter span {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: .1em solid #00008B;
+      color: #00008B;
+      font-size: 48px;
+      font-weight: 700;
     }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .word1 { width: 0; animation: typing 1s steps(10,end) 0s forwards, blink .75s step-end infinite; }
+    .word2 { width: 0; animation: typing 1s steps(10,end) 1.5s forwards, blink .75s step-end infinite; }
+    .word3 { width: 0; animation: typing 1s steps(10,end) 3s forwards, blink .75s step-end infinite; }
+    .word4 { width: 0; animation: typing 1s steps(10,end) 4.5s forwards, blink .75s step-end infinite; }
     </style>
-    <h1 class="bounce-title">Insurance Claims Risk Explorer</h1>
+    <div class="typewriter">
+      <span class="word1">Insurance </span>
+      <span class="word2">Claims </span>
+      <span class="word3">Risk </span>
+      <span class="word4">Explorer</span>
+    </div>
     ''',
     unsafe_allow_html=True
 )
