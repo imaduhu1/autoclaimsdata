@@ -16,7 +16,7 @@ def load_data(path):
         return df
     return _load()
 
-data = load_data('/mnt/data/insurance_claims.csv')
+data = load_data('insurance_claims.csv')
 
 # Feature selection
 numeric_features = [
