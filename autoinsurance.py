@@ -9,7 +9,7 @@ from sklearn.cluster import KMeans
 
 #1. Page Configuration & Header
 
-st.set_page_config(page_title="Insurance Claims Risk Explorer", layout="wide")
+st.set_page_config(page_title="Insurance Auto-claims Risk Explorer", layout="wide")
 st.markdown(
     '''
     <style>
@@ -76,7 +76,7 @@ st.markdown(
       <span class="letter" style="animation-delay:2.6s;">r</span>
     </div>
     
-    '''
+    ''',
     unsafe_allow_html=True
 )
 
