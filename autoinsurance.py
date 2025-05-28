@@ -75,8 +75,8 @@ st.markdown(
       <span class="letter" style="animation-delay:2.5s;">e</span>
       <span class="letter" style="animation-delay:2.6s;">r</span>
     </div>
-    <h1 class="final-title">Insurance Claims Risk Explorer</h1>
-    ''',
+    
+    '''
     unsafe_allow_html=True
 )
 
