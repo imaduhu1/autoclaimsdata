@@ -6,9 +6,9 @@ import altair as alt
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.cluster import KMeans
 
-# ————————————————————————————————
-# 1. Page Configuration & Header
-# ————————————————————————————————
+
+#1. Page Configuration & Header
+
 st.set_page_config(page_title="Insurance Claims Risk Explorer", layout="wide")
 st.markdown(
     '''
@@ -33,9 +33,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ————————————————————————————————
-# 2. Data Loading & Preprocessing
-# ————————————————————————————————
+
+#2. Data Loading & Preprocessing
 
 @st.cache_data
 # Cache CSV loading for performance
@@ -58,9 +57,9 @@ bins = [17, 29, 39, 49, 59, 69, 100]
 labels = ['18-29','30-39','40-49','50-59','60-69','70+']
 df['AgeGroup'] = pd.cut(df['age'], bins=bins, labels=labels)
 
-# ————————————————————————————————
-# 3. Clustering & Risk Labeling
-# ————————————————————————————————
+
+#3. Clustering & Risk Labeling
+
 features = ['total_claim_amount', 'policy_annual_premium', 'months_as_customer', 'age']
 X = df[features].fillna(0)
 
@@ -84,9 +83,9 @@ df['RiskLevel'] = df['cluster_id'].map(cluster_to_label)
 # Encode fraud for quantitative charts
 df['FraudFlag'] = df['fraud_reported'].map({'Y': 1, 'N': 0})
 
-# ————————————————————————————————
+
 # 4. Sidebar Filters
-# ————————————————————————————————
+
 st.sidebar.header('Filters & Options')
 selected_risks = st.sidebar.multiselect('Select Risk Levels', risk_labels, default=risk_labels)
 selected_states = st.sidebar.multiselect('Filter by Policy State', sorted(df['policy_state'].unique()), default=[])
@@ -100,9 +99,9 @@ start_date, end_date = date_range
 mask = (df_filtered['policy_bind_date'] >= pd.to_datetime(start_date)) & (df_filtered['policy_bind_date'] <= pd.to_datetime(end_date))
 df_filtered = df_filtered[mask]
 
-# ————————————————————————————————
+
 # 5. KPI Cards
-# ————————————————————————————————
+
 st.subheader('Key Metrics')
 avg_claim = df_filtered['total_claim_amount'].mean()
 median_claim = df_filtered['total_claim_amount'].median()
@@ -117,9 +116,8 @@ c4.metric('Records', f"{count:,}")
 
 st.markdown('---')
 
-# ————————————————————————————————
+
 # 6. Visualizations
-# ————————————————————————————————
 
 # 6a. Distribution of Risk Levels
 risk_dist = df_filtered['RiskLevel'].value_counts().reset_index()
