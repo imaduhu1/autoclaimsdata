@@ -26,11 +26,13 @@ st.markdown(
       80%  { transform: translateY(20px); opacity: 1; }
       100% { transform: translateY(0); opacity: 1; }
     }
-    .container { text-align: center; overflow: hidden; white-space: nowrap; }
+    .container {
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
     </style>
     <div class="container">
-      <!-- Falling letters sequence -->
-      <!-- "Insurance" -->
       <span class="letter" style="animation-delay:0s;">I</span>
       <span class="letter" style="animation-delay:0.1s;">n</span>
       <span class="letter" style="animation-delay:0.2s;">s</span>
@@ -41,7 +43,6 @@ st.markdown(
       <span class="letter" style="animation-delay:0.7s;">c</span>
       <span class="letter" style="animation-delay:0.8s;">e</span>
       <span style="display:inline-block; width:16px;"></span>
-      <!-- "Auto-claims" -->
       <span class="letter" style="animation-delay:0.9s;">A</span>
       <span class="letter" style="animation-delay:1.0s;">u</span>
       <span class="letter" style="animation-delay:1.1s;">t</span>
@@ -54,13 +55,11 @@ st.markdown(
       <span class="letter" style="animation-delay:1.8s;">m</span>
       <span class="letter" style="animation-delay:1.9s;">s</span>
       <span style="display:inline-block; width:16px;"></span>
-      <!-- "Risk" -->
       <span class="letter" style="animation-delay:2.0s;">R</span>
       <span class="letter" style="animation-delay:2.1s;">i</span>
       <span class="letter" style="animation-delay:2.2s;">s</span>
       <span class="letter" style="animation-delay:2.3s;">k</span>
       <span style="display:inline-block; width:16px;"></span>
-      <!-- "Explorer" -->
       <span class="letter" style="animation-delay:2.4s;">E</span>
       <span class="letter" style="animation-delay:2.5s;">x</span>
       <span class="letter" style="animation-delay:2.6s;">p</span>
@@ -70,7 +69,7 @@ st.markdown(
       <span class="letter" style="animation-delay:3.0s;">e</span>
       <span class="letter" style="animation-delay:3.1s;">r</span>
     </div>
-    ''',
+    '''
 )
 #2. Data Loading & Preprocessing
 
