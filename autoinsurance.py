@@ -13,26 +13,31 @@ st.set_page_config(page_title="Insurance Claims Risk Explorer", layout="wide")
 st.markdown(
     '''
     <style>
-    .title {
+    .bounce-title {
         font-size: 48px;
         font-weight: 700;
         text-align: center;
         color: #2E86AB !important;
-        animation: slideFade 5s ease-in-out infinite;
+        display: inline-block;
+        animation: bounce 2s infinite;
         margin: 20px 0;
     }
-    @keyframes slideFade {
-        0% { transform: translateX(-40%); opacity: 0; }
-        30% { transform: translateX(0%); opacity: 1; }
-        70% { transform: translateX(0%); opacity: 1; }
-        100% { transform: translateX(40%); opacity: 0; }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
     }
     </style>
-    <h1 class="title">Insurance Claims Risk Explorer</h1>
+    <h1 class="bounce-title">Insurance Claims Risk Explorer</h1>
     ''',
     unsafe_allow_html=True
 )
-
 
 #2. Data Loading & Preprocessing
 
