@@ -13,60 +13,73 @@ st.set_page_config(page_title="Insurance Claims Risk Explorer", layout="wide")
 st.markdown(
     '''
     <style>
-    .bounce-letter {
+    .letter {
       display: inline-block;
       color: #00008B;
       font-size: 48px;
       font-weight: 700;
-      animation: bounceX 1s ease-out forwards;
-      animation-fill-mode: forwards;
+      opacity: 0;
+      animation: drop 1s ease-out forwards;
     }
-    @keyframes bounceX {
-      0%   { transform: translateX(-100px) translateY(0); }
-      50%  { transform: translateX(20px)  translateY(-20px); }
-      100% { transform: translateX(0)     translateY(0); }
+    @keyframes drop {
+      0%   { transform: translateY(-200px); opacity: 0; }
+      80%  { transform: translateY(20px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
     }
-    .container { overflow: hidden; white-space: nowrap; }
+    .final-title {
+      text-align: center;
+      color: #00008B;
+      font-size: 48px;
+      font-weight: 700;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+      animation-delay: 3.7s;
+      margin-top: -48px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .container { text-align: center; overflow: hidden; white-space: nowrap; }
     </style>
-    <div class="container" style="text-align:center;">
-      <!-- "Insurance" -->
-      <span class="bounce-letter" style="animation-delay:5s;">I</span>
-      <span class="bounce-letter" style="animation-delay:5.1s;">n</span>
-      <span class="bounce-letter" style="animation-delay:5.2s;">s</span>
-      <span class="bounce-letter" style="animation-delay:5.3s;">u</span>
-      <span class="bounce-letter" style="animation-delay:5.4s;">r</span>
-      <span class="bounce-letter" style="animation-delay:5.5s;">a</span>
-      <span class="bounce-letter" style="animation-delay:5.6s;">n</span>
-      <span class="bounce-letter" style="animation-delay:5.7s;">c</span>
-      <span class="bounce-letter" style="animation-delay:5.8s;">e</span>
+    <div class="container">
+      <!-- Falling letters sequence -->
+      <span class="letter" style="animation-delay:0s;">I</span>
+      <span class="letter" style="animation-delay:0.1s;">n</span>
+      <span class="letter" style="animation-delay:0.2s;">s</span>
+      <span class="letter" style="animation-delay:0.3s;">u</span>
+      <span class="letter" style="animation-delay:0.4s;">r</span>
+      <span class="letter" style="animation-delay:0.5s;">a</span>
+      <span class="letter" style="animation-delay:0.6s;">n</span>
+      <span class="letter" style="animation-delay:0.7s;">c</span>
+      <span class="letter" style="animation-delay:0.8s;">e</span>
       <span style="display:inline-block; width:16px;"></span>
-      <!-- "Claims" -->
-      <span class="bounce-letter" style="animation-delay:5.9s;">C</span>
-      <span class="bounce-letter" style="animation-delay:6.0s;">l</span>
-      <span class="bounce-letter" style="animation-delay:6.1s;">a</span>
-      <span class="bounce-letter" style="animation-delay:6.2s;">i</span>
-      <span class="bounce-letter" style="animation-delay:6.3s;">m</span>
-      <span class="bounce-letter" style="animation-delay:6.4s;">s</span>
+      <span class="letter" style="animation-delay:0.9s;">C</span>
+      <span class="letter" style="animation-delay:1.0s;">l</span>
+      <span class="letter" style="animation-delay:1.1s;">a</span>
+      <span class="letter" style="animation-delay:1.2s;">i</span>
+      <span class="letter" style="animation-delay:1.3s;">m</span>
+      <span class="letter" style="animation-delay:1.4s;">s</span>
       <span style="display:inline-block; width:16px;"></span>
-      <!-- "Risk" -->
-      <span class="bounce-letter" style="animation-delay:6.5s;">R</span>
-      <span class="bounce-letter" style="animation-delay:6.6s;">i</span>
-      <span class="bounce-letter" style="animation-delay:6.7s;">s</span>
-      <span class="bounce-letter" style="animation-delay:6.8s;">k</span>
+      <span class="letter" style="animation-delay:1.5s;">R</span>
+      <span class="letter" style="animation-delay:1.6s;">i</span>
+      <span class="letter" style="animation-delay:1.7s;">s</span>
+      <span class="letter" style="animation-delay:1.8s;">k</span>
       <span style="display:inline-block; width:16px;"></span>
-      <!-- "Explorer" -->
-      <span class="bounce-letter" style="animation-delay:6.9s;">E</span>
-      <span class="bounce-letter" style="animation-delay:7.0s;">x</span>
-      <span class="bounce-letter" style="animation-delay:7.1s;">p</span>
-      <span class="bounce-letter" style="animation-delay:7.2s;">l</span>
-      <span class="bounce-letter" style="animation-delay:7.3s;">o</span>
-      <span class="bounce-letter" style="animation-delay:7.4s;">r</span>
-      <span class="bounce-letter" style="animation-delay:7.5s;">e</span>
-      <span class="bounce-letter" style="animation-delay:7.6s;">r</span>
+      <span class="letter" style="animation-delay:1.9s;">E</span>
+      <span class="letter" style="animation-delay:2.0s;">x</span>
+      <span class="letter" style="animation-delay:2.1s;">p</span>
+      <span class="letter" style="animation-delay:2.2s;">l</span>
+      <span class="letter" style="animation-delay:2.3s;">o</span>
+      <span class="letter" style="animation-delay:2.4s;">r</span>
+      <span class="letter" style="animation-delay:2.5s;">e</span>
+      <span class="letter" style="animation-delay:2.6s;">r</span>
     </div>
+    <h1 class="final-title">Insurance Claims Risk Explorer</h1>
     ''',
     unsafe_allow_html=True
 )
+
 #2. Data Loading & Preprocessing
 
 @st.cache_data
